@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"TRABAJO PRACTICO N°1 JavaScript</title>
+</head>
+<body>
+    <p>Consigna <br><br><br>
+        Con los conocimientos vistos hasta el momento, empezarás a armar la estructura inicial de tu proyecto integrador. A partir de los ejemplos mostrados la primera clase, deberás:<br><br>
+        Pensar el alcance de tu proyecto: ¿usarás un cotizador de seguros? ¿un simulador de créditos? ¿un simulador personalizado?<br><br>
+        Armar la estructura HTML del proyecto.<br><br>
+        Incorporar lo ejercitado en las clases anteriores, algoritmo condicional y algoritmo con ciclo.<br><br>
+        Utilizar funciones para realizar esas operaciones.
+        </p>
+        
+        <h1>COTIZADOR DE SEGUROS DE AUTO</h1>
+        <p> -Elije entre 3 o mas marcas de auto (americano, europeo o asiatico) siendo el asiatico el mas barato y el europeo el mas caro<br>
+            -ingresar el modelo del auto (solamente a autos de hasta 30 años)<br>
+            -el algoritmo tiene que: cada año menos que tenga el auto sale un 3% menos del nominal segun su procedencia<br>
+            -se selecciona la covertura del seguro entre basica y completa<br>
+            
+            
+            valor nominal seguro: 4500$<br>
+            
+            valor auto Europeo: $4500*1.5 =<br>
+            
+            valor auto Americano: $4500*1.3 =<br>
+            
+            valor auto Asiatico: $4500*1.1 =<br>
+            
+            
+            cada año decrementa 3% del nominal:<br>
+            
+            2023=valor nominal del auto segun procedencia-(valor nominal*0.03(2023-año del vehiculo))<br>
+            2022=valor nominal del auto segun procedencia-(valor nominal*0.03(2023-2022))<br>
+            2021=valor nominal del auto segun procedencia-(valor nominal*0.03*(2023-2021))<br>
+            .<br>
+            .<br>
+            .<br>
+            1993=valor nominal del auto segun procedencia-(valor nominal*0.03*(2023-1993))</p>
+    <script src="./script.js">
+
+    </script>
+</body>
+</html>
