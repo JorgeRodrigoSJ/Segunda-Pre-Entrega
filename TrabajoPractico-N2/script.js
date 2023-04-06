@@ -22,77 +22,72 @@ Métodos de búsqueda y filtrado sobre el Array.
 --------------------------------------------------------------------------------
 */
 
+//SELECTOR DE REGALOS
 
 
-const servicios = [
-  { id: 1, nombre: "limpieza de cutis", precio: 1200, img: "limpieza.jpg" },
-  { id: 2, nombre: "masajes", precio: 1800, img: "masajes.jpg" },
-  { id: 3, nombre: "electrodos", precio: 2800, img: "electrodos.jpg" },
-  { id: 4, nombre: "manicura", precio: 1500, img: "manicuria.webp" },
-  { id: 5, nombre: "uñas", precio: 1100, img: "esculpidas.webp" },
-  { id: 6, nombre: "mascarillas", precio: 1900, img: "mascarilla.jpeg" },
-  { id: 7, nombre: "microblanding", precio: 5800, img: "microblanding.png" },
-  {
-    id: 8,
-    nombre: "radiofrecuencia",
-    precio: 12800,
-    img: "radiofrecuencia.png",
-  },
-  {
-    id: 9,
-    nombre: "micropigmentación",
-    precio: 7800,
-    img: "micropigmentacion.jpeg",
-  },
-];
-
-function Servicio(nombre, precio, img) {
-  this.id = servicios.length + 1;
-  this.nombre = nombre;
-  this.precio = parseFloat(precio);
-  //valido si recibo imagen
-  if (!img) {
-    this.img = "https://via.placeholder.com/300";
-  } else {
-    this.img = img;
-  }
-}
+const regalos = [
+    { id: 1, nombre: "mate", precio: 1200, img: "mate.jpg" },
+    { id: 2, nombre: "masajes", precio: 1800, img: "masajes.jpg" },
+    { id: 3, nombre: "remera", precio: 2800, img: "remera.jpg" },
+    { id: 4, nombre: "campera", precio: 1500, img: "campera.webp" },
+    { id: 5, nombre: "viaje por el pais", precio: 1100, img: "viaje.webp" },
+    { id: 6, nombre: "mochila", precio: 1900, img: "mochila.jpeg" },
+    { id: 7, nombre: "gorra", precio: 5800, img: "gorra.png" },
+   
+  ];
 
 
-const newServicio=new Servicio("depilacion", 5000)
-servicios.push(newServicio)
+let maximo = prompt("Selecciona cuanto es lo maximo que desea gastar en su regalo:");
 
+console.log("eligio el rango hasta $"+maximo);
 
-//metodos busqueda
-//arr.find((el)=>{ return el.nombre == "arroz"})
-const findService=(arr,filtro)=>{
-    const encontrado=arr.find((el)=>{//servicios
-        //return el.nombre == filtro 
-        return el.nombre.includes(filtro)
-    })
-    return encontrado;
-}
-
-const servEncontrado= findService(servicios, "cutis")
-console.log(servEncontrado);
-
-
+//funcion de filtrado
 function filtrarPorPrecio(arr, filtro){
-  return arr.filter((el)=>{
-    return el.precio <= filtro
-  })
+    return arr.filter((el)=>{
+      return el.precio <= filtro
+    })
+  }
+
+const filtrados = filtrarPorPrecio(regalos, maximo)
+
+console.log(filtrados);
+
+
+  
+
+//FUNCION CONSTRUCTOR
+function regalo(nombre, precio, img) {
+    this.id = regalos.length + 1;
+    this.nombre = nombre;
+    this.precio = parseFloat(precio);
+    //valido si recibo imagen
+    if (!img) {
+      this.img = "https://via.placeholder.com/300";
+    } else {
+      this.img = img;
+    }
+  }
+
+
+//esto es para agregar regalos  
+regalos.push (new regalo("camisa",5000));
+
+
+
+/*aca pueo hacer que sume iva
+
+sumaIva() {
+    this.precio = this.precio*1.21;
 }
 
-const baratos = filtrarPorPrecio(servicios, 2400)
+//sumar iva a los regalos
 
-console.log(baratos);
-const masBaratos= filtrarPorPrecio(baratos,1200)
-console.log(masBaratos);
+for (const regalo of regalos)
+regalos.sumaIva():
 
-const servBarato= findService(masBaratos,"uñ")
+console.log(regalos);
+   
+ 
+*/
 
-console.log(servBarato);
 
-const carrito= []
-carrito.push(servBarato)
-console.log(carrito);
