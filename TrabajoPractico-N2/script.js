@@ -37,9 +37,9 @@ const regalos = [
   ];
 
 
-let maximo = prompt("Selecciona cuanto es lo maximo que desea gastar en su regalo:");
+let gasto = prompt("Selecciona cuanto es lo maximo que desea gastar en su regalo (hasta $6000):");
 
-console.log("eligio el rango hasta $"+maximo);
+console.log("eligio hasta $"+gasto);
 
 //funcion de filtrado
 function filtrarPorPrecio(arr, filtro){
@@ -48,7 +48,7 @@ function filtrarPorPrecio(arr, filtro){
     })
   }
 
-const filtrados = filtrarPorPrecio(regalos, maximo)
+const filtrados = filtrarPorPrecio(regalos, gasto)
 
 console.log(filtrados);
 
