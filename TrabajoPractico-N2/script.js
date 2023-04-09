@@ -52,6 +52,7 @@ const filtrados = filtrarPorPrecio(regalos, gasto)
 
 console.log(filtrados);
 
+//Con esta funcion muestro el nombre y el precio final con ivaS
 const PrecioConIva=filtrados.map((el)=>{
 return{
   nombre: el.nombre,
@@ -64,7 +65,7 @@ console.log(PrecioConIva);
 
   
 
-//FUNCION CONSTRUCTOR
+//funcion constructor
 function regalo(nombre, precio, img) {
     this.id = regalos.length + 1;
     this.nombre = nombre;
