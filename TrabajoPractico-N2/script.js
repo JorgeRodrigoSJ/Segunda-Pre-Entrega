@@ -24,7 +24,7 @@ Métodos de búsqueda y filtrado sobre el Array.
 
 //SELECTOR DE REGALOS
 
-
+//array
 const regalos = [
     { id: 1, nombre: "mate", precio: 1200, img: "mate.jpg" },
     { id: 2, nombre: "masajes", precio: 1800, img: "masajes.jpg" },
@@ -52,6 +52,15 @@ const filtrados = filtrarPorPrecio(regalos, gasto)
 
 console.log(filtrados);
 
+const PrecioConIva=filtrados.map((el)=>{
+return{
+  nombre: el.nombre,
+  precio: el.precio*1.21
+}
+
+})
+console.log(PrecioConIva);
+
 
   
 
@@ -74,20 +83,8 @@ regalos.push (new regalo("camisa",5000));
 
 
 
-/*aca pueo hacer que sume iva
 
-sumaIva() {
-    this.precio = this.precio*1.21;
-}
 
-//sumar iva a los regalos
 
-for (const regalo of regalos)
-regalos.sumaIva():
-
-console.log(regalos);
-   
  
-*/
-
 
