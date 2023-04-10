@@ -20,11 +20,15 @@ Métodos de búsqueda y filtrado sobre el Array.
 
 
 --------------------------------------------------------------------------------
+
+SELECTOR DE REGALOS
+
+ EL SIGUIENTE CODIGO REALIZA UN FILTRADO SEGUN PRECIO SOBRE UN ARRAY DE REGALOS Y LUEGO SE MUESTRA POR CONSOLA EL PRECIO FINAL CON IVA INCLUIDO.
 */
 
-//SELECTOR DE REGALOS
 
 
+//array
 const regalos = [
     { id: 1, nombre: "mate", precio: 1200, img: "mate.jpg" },
     { id: 2, nombre: "masajes", precio: 1800, img: "masajes.jpg" },
@@ -37,9 +41,9 @@ const regalos = [
   ];
 
 
-let maximo = prompt("Selecciona cuanto es lo maximo que desea gastar en su regalo:");
+let gasto = prompt("Selecciona cuanto es lo maximo que desea gastar en su regalo (hasta $6000):");
 
-console.log("eligio el rango hasta $"+maximo);
+console.log("eligio hasta $"+gasto);
 
 //funcion de filtrado
 function filtrarPorPrecio(arr, filtro){
@@ -48,14 +52,24 @@ function filtrarPorPrecio(arr, filtro){
     })
   }
 
-const filtrados = filtrarPorPrecio(regalos, maximo)
+const filtrados = filtrarPorPrecio(regalos, gasto)
 
 console.log(filtrados);
+
+//Con esta funcion muestro el nombre y el precio final con iva
+const PrecioConIva=filtrados.map((el)=>{
+return{
+  nombre: el.nombre,
+  precio: el.precio*1.21
+}
+
+})
+console.log(PrecioConIva);
 
 
   
 
-//FUNCION CONSTRUCTOR
+//funcion constructor
 function regalo(nombre, precio, img) {
     this.id = regalos.length + 1;
     this.nombre = nombre;
@@ -74,20 +88,8 @@ regalos.push (new regalo("camisa",5000));
 
 
 
-/*aca pueo hacer que sume iva
 
-sumaIva() {
-    this.precio = this.precio*1.21;
-}
 
-//sumar iva a los regalos
 
-for (const regalo of regalos)
-regalos.sumaIva():
-
-console.log(regalos);
-   
  
-*/
-
 
