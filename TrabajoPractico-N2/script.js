@@ -20,9 +20,13 @@ Métodos de búsqueda y filtrado sobre el Array.
 
 
 --------------------------------------------------------------------------------
+
+SELECTOR DE REGALOS
+
+ EL SIGUIENTE CODIGO REALIZA UN FILTRADO SEGUN PRECIO SOBRE UN ARRAY DE REGALOS Y LUEGO SE MUESTRA POR CONSOLA EL PRECIO FINAL CON IVA INCLUIDO.
 */
 
-//SELECTOR DE REGALOS
+
 
 //array
 const regalos = [
@@ -52,7 +56,7 @@ const filtrados = filtrarPorPrecio(regalos, gasto)
 
 console.log(filtrados);
 
-//Con esta funcion muestro el nombre y el precio final con ivaS
+//Con esta funcion muestro el nombre y el precio final con iva
 const PrecioConIva=filtrados.map((el)=>{
 return{
   nombre: el.nombre,
